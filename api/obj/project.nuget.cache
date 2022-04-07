@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8HBW2ihe3PGcryeLhBmS7mnEdhurdME0JUAJmL5wq8masOQFZHkKM1LwcMViHGvx+CzdbxTs92drNgP4QWELBg==",
+  "success": true,
+  "projectFilePath": "/Users/maryjane/Desktop/Source/MIS321/MIS321_PA4/api/api.csproj",
+  "expectedPackageFiles": [
+    "/Users/maryjane/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/maryjane/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/maryjane/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/maryjane/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/maryjane/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/maryjane/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
