@@ -24,3 +24,55 @@
     max-width: fit-content;
     padding: 5px;
 }
+
+.container {
+    position: relative;
+    width: 50%;
+  }
+
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */
+  .container .favbtn {
+    position: relative;
+    margin-bottom: -90;
+    line-height: 0%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(229, 215, 223);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .container .deletebtn {
+    position: relative;
+    margin-bottom: -90;
+    line-height: 0%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(229, 215, 223);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  
+  .container .favbtn:hover {
+    background-color: blueviolet;
+  }  
+  .container .deletebtn:hover {
+    background-color: blueviolet;
+  }  

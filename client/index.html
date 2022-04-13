@@ -8,7 +8,7 @@
     <link href="./resources/css/index.css" rel="stylesheet">
     <title>Big Al's BDS Playlist</title>
 </head>
-<body>
+<body onload = "handleOnLoad()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Big Al's BDS Playlist</a>
@@ -45,6 +45,12 @@
                 <img src="./resources/images/music.jpeg" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Sweet Home Alabama</h5>
+                    <div class="container">
+
+                      <!-- <img src="./resources/images/heart.jpeg" alt="..."> -->
+                      <button class="favbtn" >Favorite</button>
+                      <button class="deletebtn" >Delete</button>
+                    </div>
                 </div>
             </div>
             <div class="card col-md-4 bg-dark text-white">
@@ -86,8 +92,9 @@
         <form onsubmit="false;">
             <label class="form-label" for="title">Enter a new song here:</label><br>
             <input class="form-control" type="text" id="title" name="title" ><br>
-            <button class="btn btn-dark">Add Song</button>
+            <button class="btn btn-dark" onclick="postSongs()">Add Song</button>
           </form>
+            </div>
     </div>
 
     <div id="search" class="container">

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using api.models;
 using api.database;
@@ -27,10 +28,12 @@ namespace api.database
             con.Close();
         }
 
-        public void Create(Songs song)
+        public void Create(string songTitle) //make sure this is passing correctly from HTML
         {
             connectionstring myConnection = new connectionstring();
             string cs = myConnection.cs; //this is actually grabbing the connection string 
+
+            Songs newSongs = new Songs(){SongTitle = songTitle, SongTimestamp = DateTime.Now, Deleted = "n", Favorited = "no"};
 
             using var con = new MySqlConnection(cs); // con = connection, now pulling the mysql connection (pulling connection string from above)
             con.Open();  //opens the connection
@@ -44,11 +47,11 @@ namespace api.database
             string stm = @"INSERT INTO Songs(songID, songTitle, songTimestamp, Deleted, Favorited) VALUES (@songID, @songTitle, @timestamp, @deleted, @favorited)"; //sql statement 
 
             using var cmd = new MySqlCommand (stm, con); //creating the command
-            cmd.Parameters.AddWithValue("@songID", song.SongID);
-            cmd.Parameters.AddWithValue("@songTitle", song.SongTitle);
-            cmd.Parameters.AddWithValue("@timeStamp", song.SongTimestamp);
-            cmd.Parameters.AddWithValue("@deleted", song.Deleted);
-            cmd.Parameters.AddWithValue("@favorited", song.Favorited);
+            cmd.Parameters.AddWithValue("@songID", newSongs.SongID);
+            cmd.Parameters.AddWithValue("@songTitle", newSongs.SongTitle);
+            cmd.Parameters.AddWithValue("@timeStamp", newSongs.SongTimestamp);
+            cmd.Parameters.AddWithValue("@deleted", newSongs.Deleted);
+            cmd.Parameters.AddWithValue("@favorited", newSongs.Favorited);
 
             cmd.ExecuteNonQuery(); //execute to actually make it happen
             con.Close();

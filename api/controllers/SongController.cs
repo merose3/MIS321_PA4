@@ -30,7 +30,7 @@ namespace api.controllers
         // GET: api/song/5
         [EnableCors("AnotherPolicy")]
         [HttpGet("{id}", Name = "GetPost")]
-        public Songs Get(int id)
+        public Songs Get(int id) //read
         {
             return new Songs();
             // IGetPost read = new ReadPostData();
@@ -40,10 +40,10 @@ namespace api.controllers
         // POST: api/song
         [EnableCors("AnotherPolicy")]
         [HttpPost(Name = "PostSongs")]
-        public void Post(Songs song)
+        public void Post(Songs song)  //Post = create
         {
-            UpdateSong updating = new UpdateSong();
-            updating.Update(song);
+            createnewsong creating = new createnewsong();
+            creating.Create(song.SongTitle);
             // IAddPost add = new AddPost();
             // add.Add(p);
         }
@@ -51,10 +51,10 @@ namespace api.controllers
         // PUT: api/song/5
         [EnableCors("AnotherPolicy")]
         [HttpPut]
-        public void Put([FromBody] Songs song)
+        public void Put([FromBody] Songs song) //update & favorite
         {
-            createnewsong creating = new createnewsong();
-            creating.Create(song);
+            UpdateSong updating = new UpdateSong();
+            updating.Update(song.SongID); //this is sus
             // IEditPost edit = new EditPost();
             // edit.Edit(p);
         }
@@ -62,7 +62,7 @@ namespace api.controllers
         // DELETE: api/song/5
         [EnableCors("AnotherPolicy")]
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(int id) //delete 
         {
             DeleteSong deleting = new DeleteSong();
             deleting.Delete(id);
