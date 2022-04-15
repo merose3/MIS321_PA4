@@ -33,7 +33,7 @@ namespace api.database
             connectionstring myConnection = new connectionstring();
             string cs = myConnection.cs; //this is actually grabbing the connection string 
 
-            Songs newSongs = new Songs(){SongTitle = songTitle, SongTimestamp = DateTime.Now, Deleted = "n", Favorited = "no"};
+            Songs newSongs = new Songs(){SongTitle = songTitle, SongTimestamp = DateTime.Now, Deleted = "n", Favorited = "n"};
 
             using var con = new MySqlConnection(cs); // con = connection, now pulling the mysql connection (pulling connection string from above)
             con.Open();  //opens the connection
@@ -62,13 +62,13 @@ namespace api.database
             throw new System.NotImplementedException();
         }
 
-        private class ConnectionString
-        {
-            internal string cs;
+        // private class ConnectionString
+        // {
+        //     internal string cs;
 
-            public ConnectionString()
-            {
-            }
-        }
+        //     public ConnectionString()
+        //     {
+        //     }
+        // }
     }
 }

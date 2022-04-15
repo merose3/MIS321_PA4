@@ -40,7 +40,7 @@ namespace api.database
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT * from songs ORDER BY SongTimestamp DESC";
+            string stm = @"SELECT * from songs where deleted = 'n' ORDER BY SongTimestamp DESC";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
             while(rdr.Read())

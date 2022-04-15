@@ -9,41 +9,27 @@ namespace api.database
 {
     public class UpdateSong : IUpdateSong
     {
-         public void Update(Songs song)
+         public void Update(int id)
         {
+            
             connectionstring myConnection = new connectionstring();
             string cs = myConnection.cs;
-
             using var con = new MySqlConnection(cs);
             con.Open(); 
+            // Read reading = new Read();
+            // reading.GetAll();
+            // System.Console.WriteLine("Please select the ID of the song you would like to delete");
+            // id = int.Parse(Console.ReadLine());
 
-            //gonna change this to favorited 
-            // string stm = @"Update Songs set songTitle = @song.SongTitle where songID = @Song.SongID";
-
-            // using var cmd = new MySqlCommand (stm, con);
-            // cmd.Parameters.AddWithValue("@song.SongID", song.SongID);
-            // cmd.Parameters.AddWithValue("@song.SongTitle", song.SongTitle);
-
-            // cmd.ExecuteNonQuery();
-            // con.Close();
-             string stm = @"Update Songs set favorited = 'yes' where songID = @Song.SongID";
+            string stm = @"Update Songs set favorited = 'y' where songID = @blah";
 
             using var cmd = new MySqlCommand (stm, con);
-            cmd.Parameters.AddWithValue("@song.SongID", song.SongID);
-            cmd.Parameters.AddWithValue("@song.SongTitle", song.SongTitle);
+            cmd.Parameters.AddWithValue("@blah", id);
 
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        internal void Update(int songID)
-        {
-            throw new NotImplementedException();
-        }
-
-        // internal void Update(string songTitle)
-        // {
-        //     throw new NotImplementedException();
-        // }
+        
     }
 }

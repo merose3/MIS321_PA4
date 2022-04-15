@@ -8,6 +8,6 @@ namespace api.Interfaces
 {
     public interface IUpdateSong
     {
-        public void Update(Songs song);
+        public void Update(int id);
     }
 }
